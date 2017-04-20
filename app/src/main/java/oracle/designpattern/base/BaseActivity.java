@@ -17,6 +17,10 @@ public abstract class BaseActivity extends Activity {
         setContentView(initLayout());
         //开始注入
         MethodInfoParser.methodInfo(this);
+        initView();
+        initData();
     }
     public abstract int initLayout();
+    public abstract void initView();
+    public abstract void initData();
 }
