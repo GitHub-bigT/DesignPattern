@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import butterknife.ButterKnife;
+import oracle.designpattern.annotation.FindViewParser;
 import oracle.designpattern.annotation.MethodInfoParser;
+import oracle.designpattern.annotation.OnClickParser;
 
 /**
  * Created by 田帅 on 2017/4/20.
@@ -17,10 +20,11 @@ public abstract class BaseActivity extends Activity {
         setContentView(initLayout());
         //开始注入
         MethodInfoParser.methodInfo(this);
-        initView();
+        FindViewParser.startFind(this);
+        ButterKnife.inject(this);
+//        OnClickParser.bindOnclick(this);
         initData();
     }
     public abstract int initLayout();
-    public abstract void initView();
     public abstract void initData();
 }
