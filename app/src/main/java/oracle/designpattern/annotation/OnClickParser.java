@@ -29,6 +29,8 @@ public class OnClickParser{
             //和getMethods的区别的  后者得到object对象中所有的方法（public）
             Method[] methods = cls.getDeclaredMethods();
             for (final Method method : methods) {
+                //
+                method.setAccessible(true);
                 OnClick onClick = method.getAnnotation(OnClick.class);
                 if (onClick != null) {
                     //得到控件的id
@@ -37,6 +39,18 @@ public class OnClickParser{
                     //通过id和
                     if (object instanceof Activity){
                         view = ((Activity) object).findViewById(id);
+                        view.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                try {
+                                    method.invoke(object);
+                                } catch (IllegalAccessException e) {
+                                    e.printStackTrace();
+                                } catch (InvocationTargetException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
                     }
                 }
             }

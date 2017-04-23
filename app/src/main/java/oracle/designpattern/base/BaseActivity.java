@@ -21,8 +21,8 @@ public abstract class BaseActivity extends Activity {
         //开始注入
         MethodInfoParser.methodInfo(this);
         FindViewParser.startFind(this);
-        ButterKnife.inject(this);
-//        OnClickParser.bindOnclick(this);
+//        ButterKnife.inject(this);
+        OnClickParser.bindOnclick(this);
         initData();
     }
     public abstract int initLayout();
