@@ -1,4 +1,4 @@
-package oracle.designpattern.annotation;
+package oracle.designpattern.annotation_reflect;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

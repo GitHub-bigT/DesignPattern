@@ -1,6 +1,4 @@
-package oracle.designpattern.annotation;
-
-import android.view.View;
+package oracle.designpattern.annotation_reflect;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

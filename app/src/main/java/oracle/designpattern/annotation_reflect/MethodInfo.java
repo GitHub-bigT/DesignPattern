@@ -1,6 +1,4 @@
-package oracle.designpattern.annotation;
-
-import android.support.annotation.Nullable;
+package oracle.designpattern.annotation_reflect;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

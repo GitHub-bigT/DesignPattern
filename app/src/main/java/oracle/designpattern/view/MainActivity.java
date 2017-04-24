@@ -1,5 +1,6 @@
 package oracle.designpattern.view;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -7,9 +8,9 @@ import android.widget.ListView;
 import java.util.List;
 
 import oracle.designpattern.R;
-import oracle.designpattern.annotation.FindView;
-import oracle.designpattern.annotation.MethodInfo;
-import oracle.designpattern.annotation.OnClick;
+import oracle.designpattern.annotation_reflect.FindView;
+import oracle.designpattern.annotation_reflect.MethodInfo;
+import oracle.designpattern.annotation_reflect.OnClick;
 import oracle.designpattern.base.BaseActivity;
 import oracle.designpattern.presenter.PMain;
 
@@ -37,7 +38,8 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.btn_annotation)
     //不加范围修饰词时默认是friendly（同一个包下的类可以访问）
-    void finishMain(){
+    void finishMain(View v){
+        Log.d("dasdas"," 参数： "+v.toString());
         finish();
     }
 

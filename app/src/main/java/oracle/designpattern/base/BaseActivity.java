@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import butterknife.ButterKnife;
-import oracle.designpattern.annotation.FindViewParser;
-import oracle.designpattern.annotation.MethodInfoParser;
-import oracle.designpattern.annotation.OnClickParser;
+import oracle.designpattern.annotation_reflect.FindViewParser;
+import oracle.designpattern.annotation_reflect.MethodInfoParser;
+import oracle.designpattern.annotation_reflect.OnClickParser;
 
 /**
  * Created by 田帅 on 2017/4/20.
@@ -21,7 +21,7 @@ public abstract class BaseActivity extends Activity {
         //开始注入
         MethodInfoParser.methodInfo(this);
         FindViewParser.startFind(this);
-//        ButterKnife.inject(this);
+        ButterKnife.inject(this);
         OnClickParser.bindOnclick(this);
         initData();
     }

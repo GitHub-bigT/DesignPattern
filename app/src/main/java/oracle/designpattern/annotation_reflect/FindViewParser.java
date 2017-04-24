@@ -1,4 +1,4 @@
-package oracle.designpattern.annotation;
+package oracle.designpattern.annotation_reflect;
 
 import android.app.Activity;
 import android.view.View;

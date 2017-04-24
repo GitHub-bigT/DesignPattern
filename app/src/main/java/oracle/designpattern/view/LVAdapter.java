@@ -10,8 +10,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import oracle.designpattern.R;
-import oracle.designpattern.annotation.FindView;
-import oracle.designpattern.annotation.FindViewParser;
+import oracle.designpattern.annotation_reflect.FindView;
+import oracle.designpattern.annotation_reflect.FindViewParser;
 
 /**
  * Created by 田帅 on 2017/4/20.

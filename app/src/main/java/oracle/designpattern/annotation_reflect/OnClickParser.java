@@ -1,17 +1,14 @@
-package oracle.designpattern.annotation;
+package oracle.designpattern.annotation_reflect;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import oracle.designpattern.R;
-
 /**
  * Created by 田帅 on 2017/4/20.
+ *
  */
 
 public class OnClickParser{
@@ -35,15 +32,14 @@ public class OnClickParser{
                 if (onClick != null) {
                     //得到控件的id
                     int id = onClick.value();
-                    View view = null;
                     //通过id和
                     if (object instanceof Activity){
-                        view = ((Activity) object).findViewById(id);
+                        final View view = ((Activity) object).findViewById(id);
                         view.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 try {
-                                    method.invoke(object);
+                                    method.invoke(object,view);
                                 } catch (IllegalAccessException e) {
                                     e.printStackTrace();
                                 } catch (InvocationTargetException e) {
